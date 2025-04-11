@@ -12,32 +12,27 @@ const TriangleInequality = () => {
     const c = parseFloat(sideC);
 
     if (a > 0 && b > 0 && c > 0) {
-      if (a + b > c && a + c > b && b + c > a)
-        setResult(
-          "This is a triangle! Keep rollin', rollin', rollin', rollin', WHAT?!"
-        );
-      else
-        setResult(
-          "This is not a triangle! It's just one of those days, when you don't wanna do math!"
-        );
+      if (a + b > c && a + c > b && b + c > a) {
+        setResult("This is a triangle! Keep rollin', rollin', rollin', rollin', WHAT?!");
+      } else {
+        setResult("This is not a triangle! It's just one of those days, when you don't wanna do math!");
+      }
     } else {
-      setResult(
-        "Please enter positive numbers for all three sides. Always keep it positive when you ride with Tha Bizkit!"
-      );
+      setResult("Please enter positive numbers for all three sides. Always keep it positive when you ride with Tha Bizkit!");
     }
   };
 
   return (
     <>
-      <div class="title">Fred Durst's Triangle Inequality Theorem</div>
+      <div className="title">Fred Durst's Triangle Inequality Theorem</div>
       <div>
         <img
           src="https://homework.study.com/cimages/multimages/16/tri3159113594440164328.png"
           alt="triangle with sides a, b, and c"
-          class="triangle-img"
+          className="triangle-img"
         />
       </div>
-      <div class="side-inputs">
+      <div className="side-inputs">
         <div>
           <input
             type="number"
@@ -82,7 +77,7 @@ const TriangleInequality = () => {
       >
         Check
       </button>
-      <div class="result">{result}</div>
+      <div className="result">{result}</div>
     </>
   );
 };
