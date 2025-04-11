@@ -1,0 +1,96 @@
+import React, {
+  useState,
+  useRef,
+  useEffect
+} from "https://esm.sh/react@18.2.0";
+import ReactDOM from "https://esm.sh/react-dom@18.2.0";
+
+const TriangleInequality = () => {
+  const [sideA, setSideA] = useState("");
+  const [sideB, setSideB] = useState("");
+  const [sideC, setSideC] = useState("");
+  const [result, setResult] = useState("");
+
+  const handleTriangle = () => {
+    const a = parseFloat(sideA);
+    const b = parseFloat(sideB);
+    const c = parseFloat(sideC);
+
+    if (a > 0 && b > 0 && c > 0) {
+      if (a + b > c && a + c > b && b + c > a)
+        setResult(
+          "This is a triangle! Keep rollin', rollin', rollin', rollin', WHAT?!"
+        );
+      else
+        setResult(
+          "This is not a triangle! It's just one of those days, when you don't wanna do math!"
+        );
+    } else {
+      setResult(
+        "Please enter positive numbers for all three sides. Always keep it positive when you ride with Tha Bizkit!"
+      );
+    }
+  };
+
+  return (
+    <>
+      <div class="title">Fred Durst's Triangle Inequality Theorem</div>
+      <div>
+        <img
+          src="https://homework.study.com/cimages/multimages/16/tri3159113594440164328.png"
+          alt="triangle with sides a, b, and c"
+          class="triangle-img"
+        />
+      </div>
+      <div class="side-inputs">
+        <div>
+          <input
+            type="number"
+            placeholder="Side a"
+            value={sideA}
+            onChange={(e) => {
+              setSideA(e.target.value);
+              setResult("");
+            }}
+            className="side-input"
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            placeholder="Side b"
+            value={sideB}
+            onChange={(e) => {
+              setSideB(e.target.value);
+              setResult("");
+            }}
+            className="side-input"
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            placeholder="Side c"
+            value={sideC}
+            onChange={(e) => {
+              setSideC(e.target.value);
+              setResult("");
+            }}
+            className="side-input"
+          />
+        </div>
+      </div>
+      <button
+        onClick={handleTriangle}
+        disabled={!sideA || !sideB || !sideC}
+        className="submit-button"
+      >
+        Check
+      </button>
+      <div class="result">{result}</div>
+    </>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<TriangleInequality />);
