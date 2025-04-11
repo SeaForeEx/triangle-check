@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useRef,
-  useEffect
-} from "https://esm.sh/react@18.2.0";
-import ReactDOM from "https://esm.sh/react-dom@18.2.0";
+const { useState } = React;
 
 const TriangleInequality = () => {
   const [sideA, setSideA] = useState("");
