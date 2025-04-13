@@ -19,14 +19,14 @@ const TriangleInequality = () => {
         const isRight = Math.abs(c * c - (a * a + b * b)) < 0.0001;
         
         if (isRight) {
-          triangleType = "right";
+          triangleType = "a right";
         } else if (c * c < a * a + b * b) {
-          triangleType = "acute";
+          triangleType = "an acute";
         } else {
-          triangleType = "obtuse";
+          triangleType = "an obtuse";
         }
         setResult(
-          `This is a ${triangleType} triangle! Keep rollin', rollin', rollin', rollin', WHAT?!`
+          `This is ${triangleType} triangle! Keep rollin', rollin', rollin', rollin', WHAT?!`
         );
       } else {
         setResult(
