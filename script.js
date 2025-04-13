@@ -42,7 +42,7 @@ const TriangleInequality = () => {
 
   return (
     <>
-      <div className="title">Fred Durst's Triangle Inequality Theorem</div>
+      <div className="title">Fred Durst's Triangle Check</div>
       <div>
         <img
           src="https://homework.study.com/cimages/multimages/16/tri3159113594440164328.png"
